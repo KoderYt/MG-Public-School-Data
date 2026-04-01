@@ -1,0 +1,148 @@
+:root{--navy:#0f1b3d;--blue:#1a3a8f;--gold:#f5a623;--gold-light:#ffd47e;--green:#1db954;--red:#e53935;--bg:#f0f4ff;--card:#fff;--text:#0f1b3d;--muted:#6b7a99;--border:#dde3f5;--shadow:0 4px 24px rgba(15,27,61,.10);--radius:16px;--top-h:64px;--bot-h:64px}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Baloo 2',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;max-width:430px;margin:0 auto;position:relative;overflow-x:hidden}
+.topbar{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;height:var(--top-h);background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);display:flex;align-items:center;justify-content:space-between;padding:0 14px;z-index:100;box-shadow:0 2px 16px rgba(15,27,61,.25)}
+.topbar-logo{display:flex;align-items:center;gap:10px}
+.school-logo-img{width:42px;height:42px;border-radius:10px;object-fit:cover;border:2px solid var(--gold)}
+.school-name{color:white}
+.school-name h1{font-size:14px;font-weight:800;line-height:1.1}
+.school-name p{font-size:9px;opacity:.75}
+.topbar-right{display:flex;gap:8px}
+.topbar-btn{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.12);border:none;cursor:pointer;color:white;font-size:14px;display:flex;align-items:center;justify-content:center}
+.main{margin-top:var(--top-h);margin-bottom:var(--bot-h);padding:14px;min-height:calc(100vh - var(--top-h) - var(--bot-h))}
+.bottomnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;height:var(--bot-h);background:white;border-top:1px solid var(--border);display:flex;z-index:100;box-shadow:0 -4px 16px rgba(15,27,61,.08)}
+.nav-item{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border:none;background:none;cursor:pointer;color:var(--muted);font-size:10px;font-family:'Baloo 2',sans-serif;font-weight:600;padding:8px 4px;transition:all .2s}
+.nav-item i{font-size:18px;transition:all .2s}
+.nav-item.active{color:var(--blue)}
+.nav-item.active i{transform:translateY(-2px)}
+.page{display:none}
+.page.active{display:block}
+.greeting{margin-bottom:14px}
+.greeting h2{font-size:18px;font-weight:800;color:var(--navy)}
+.greeting p{font-size:12px;color:var(--muted)}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.stat-card{background:var(--card);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow);border-left:4px solid var(--blue)}
+.stat-card.gold{border-left-color:var(--gold)}
+.stat-card.red{border-left-color:var(--red)}
+.stat-card.green{border-left-color:var(--green)}
+.stat-card .stat-num{font-size:26px;font-weight:800;color:var(--navy)}
+.stat-card .stat-label{font-size:10px;color:var(--muted);font-weight:600;margin-top:2px}
+.stat-card .stat-icon{font-size:20px;margin-bottom:6px}
+.section-title{font-size:14px;font-weight:800;color:var(--navy);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.quick-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+.qa-btn{background:linear-gradient(135deg,var(--navy),var(--blue));color:white;border:none;border-radius:14px;padding:14px 10px;display:flex;flex-direction:column;align-items:center;gap:5px;cursor:pointer;font-family:'Baloo 2',sans-serif;font-weight:700;font-size:11px;box-shadow:0 4px 12px rgba(26,58,143,.25);transition:all .2s}
+.qa-btn i{font-size:20px}
+.qa-btn:active{transform:scale(.97)}
+.qa-btn.gold-btn{background:linear-gradient(135deg,#e09000,var(--gold))}
+.qa-btn.green-btn{background:linear-gradient(135deg,#14a344,var(--green))}
+.qa-btn.red-btn{background:linear-gradient(135deg,#b71c1c,var(--red))}
+.search-bar{display:flex;gap:8px;margin-bottom:12px}
+.search-bar input{flex:1;padding:10px 12px;border-radius:12px;border:2px solid var(--border);font-family:'Baloo 2',sans-serif;font-size:12px;color:var(--text);outline:none;background:white}
+.search-bar input:focus{border-color:var(--blue)}
+.search-bar select{padding:10px 8px;border-radius:12px;border:2px solid var(--border);font-family:'Baloo 2',sans-serif;font-size:11px;color:var(--text);outline:none;background:white}
+.student-card{background:white;border-radius:14px;padding:12px;margin-bottom:10px;box-shadow:var(--shadow);display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s;border:2px solid transparent}
+.student-card:active{transform:scale(.99);border-color:var(--blue)}
+.student-avatar{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;color:white;font-size:16px;font-weight:800;flex-shrink:0;overflow:hidden}
+.student-avatar img{width:100%;height:100%;object-fit:cover}
+.student-info{flex:1;min-width:0}
+.student-info .s-name{font-size:13px;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.student-info .s-meta{font-size:10px;color:var(--muted);margin-top:2px}
+.student-info .s-roll{font-size:10px;color:var(--blue);font-weight:600}
+.fee-badge{padding:3px 8px;border-radius:20px;font-size:10px;font-weight:700;white-space:nowrap;flex-shrink:0}
+.fee-badge.paid{background:#e8f8ee;color:#1a7a3c}
+.fee-badge.pending{background:#fff0f0;color:var(--red)}
+.fee-badge.partial{background:#fff8e1;color:#c07000}
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.55);z-index:200;align-items:flex-end;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal-box{background:white;border-radius:24px 24px 0 0;padding:20px 18px;width:100%;max-width:430px;max-height:92vh;overflow-y:auto;animation:slideUp .3s ease}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.modal-handle{width:40px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 16px}
+.modal-title{font-size:17px;font-weight:800;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.form-group{margin-bottom:12px}
+.form-group label{display:block;font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 12px;border-radius:12px;border:2px solid var(--border);font-family:'Baloo 2',sans-serif;font-size:13px;color:var(--text);outline:none;background:#f8faff;transition:border-color .2s}
+.form-group input:focus,.form-group select:focus{border-color:var(--blue);background:white}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.btn-primary{width:100%;padding:13px;border-radius:14px;background:linear-gradient(135deg,var(--navy),var(--blue));color:white;border:none;font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(26,58,143,.3)}
+.btn-secondary{width:100%;padding:12px;border-radius:14px;background:var(--bg);color:var(--navy);border:2px solid var(--border);font-family:'Baloo 2',sans-serif;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-danger{width:100%;padding:12px;border-radius:14px;background:#fff0f0;color:var(--red);border:2px solid #ffd0d0;font-family:'Baloo 2',sans-serif;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-green{width:100%;padding:12px;border-radius:14px;background:#e8f8ee;color:#1a7a3c;border:2px solid #b8e8c8;font-family:'Baloo 2',sans-serif;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px}
+.btn-whatsapp{width:100%;padding:12px;border-radius:14px;background:#25D366;color:white;border:none;font-family:'Baloo 2',sans-serif;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:8px}
+/* ID CARD */
+.id-card{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 60%,#2952c4 100%);border-radius:18px;padding:18px;color:white;position:relative;overflow:hidden;margin-bottom:12px}
+.id-card::before{content:'';position:absolute;top:-30px;right:-30px;width:110px;height:110px;border-radius:50%;background:rgba(245,166,35,.15)}
+.id-card-header{display:flex;align-items:center;gap:10px;margin-bottom:12px;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:10px}
+.id-school-logo{width:38px;height:38px;border-radius:8px;object-fit:cover;border:2px solid var(--gold);flex-shrink:0}
+.id-card-header h3{font-size:12px;font-weight:800}
+.id-card-header p{font-size:9px;opacity:.7}
+.id-card-body{display:flex;gap:12px}
+.id-photo{width:72px;height:72px;border-radius:12px;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;font-size:28px;color:rgba(255,255,255,.8);flex-shrink:0;overflow:hidden}
+.id-photo img{width:100%;height:100%;object-fit:cover}
+.id-details{flex:1}
+.id-details .id-name{font-size:15px;font-weight:800;margin-bottom:4px}
+.id-details .id-row{font-size:10px;opacity:.85;margin-bottom:2px}
+.id-details .id-row span{font-weight:700;color:var(--gold-light)}
+.id-barcode{text-align:center;margin-top:10px;padding-top:8px;border-top:1px solid rgba(255,255,255,.2);font-family:monospace;font-size:9px;letter-spacing:3px;opacity:.6}
+/* PHOTO UPLOAD */
+.photo-upload-area{width:80px;height:80px;border-radius:14px;border:3px dashed var(--blue);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;position:relative;background:#f0f4ff}
+.photo-upload-area img{width:100%;height:100%;object-fit:cover}
+.photo-upload-area .upload-icon{font-size:24px;color:var(--blue)}
+.photo-upload-area .upload-text{font-size:9px;color:var(--muted);margin-top:2px;text-align:center}
+.photo-upload-wrapper{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding:12px;background:var(--bg);border-radius:12px}
+/* FEE */
+.fee-summary{background:linear-gradient(135deg,#e53935,#c62828);border-radius:16px;padding:16px;color:white;margin-bottom:14px}
+.fee-summary h3{font-size:12px;opacity:.85;margin-bottom:4px}
+.fee-summary .big-amount{font-size:28px;font-weight:800}
+.filter-tabs{display:flex;gap:8px;margin-bottom:12px;overflow-x:auto;padding-bottom:4px}
+.filter-tab{padding:6px 14px;border-radius:20px;border:2px solid var(--border);background:white;font-family:'Baloo 2',sans-serif;font-size:11px;font-weight:700;color:var(--muted);cursor:pointer;white-space:nowrap}
+.filter-tab.active{background:var(--navy);color:white;border-color:var(--navy)}
+.export-card{background:white;border-radius:14px;padding:16px;margin-bottom:10px;box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;cursor:pointer;border:2px solid transparent;transition:all .2s}
+.export-card:active{border-color:var(--blue)}
+.export-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.export-card-info h4{font-size:13px;font-weight:700;color:var(--navy)}
+.export-card-info p{font-size:11px;color:var(--muted);margin-top:2px}
+.toast{position:fixed;top:76px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;padding:10px 18px;border-radius:12px;font-size:12px;font-weight:600;box-shadow:0 4px 16px rgba(0,0,0,.25);z-index:999;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap}
+.toast.show{opacity:1}
+.detail-header{background:linear-gradient(135deg,var(--navy),var(--blue));margin:-20px -18px 14px;padding:20px 18px;color:white;display:flex;align-items:center;gap:12px;border-radius:24px 24px 0 0}
+.detail-avatar{width:56px;height:56px;border-radius:14px;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:800;border:2px solid rgba(255,255,255,.35);overflow:hidden;flex-shrink:0}
+.detail-avatar img{width:100%;height:100%;object-fit:cover}
+.detail-info h2{font-size:16px;font-weight:800}
+.detail-info p{font-size:11px;opacity:.75;margin-top:2px}
+.detail-badges{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.detail-badge{padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700;background:rgba(255,255,255,.2)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.info-item{background:var(--bg);border-radius:10px;padding:8px 10px}
+.info-item .info-label{font-size:9px;color:var(--muted);font-weight:700;text-transform:uppercase}
+.info-item .info-val{font-size:12px;font-weight:700;color:var(--navy);margin-top:2px}
+.divider{height:1px;background:var(--border);margin:12px 0}
+.empty-state{text-align:center;padding:40px 20px;color:var(--muted)}
+.empty-state i{font-size:44px;margin-bottom:10px;opacity:.3}
+.bulk-action-bar{background:white;border-radius:14px;padding:12px;margin-bottom:12px;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between}
+.bulk-action-bar p{font-size:12px;color:var(--muted)}
+.bulk-action-bar strong{color:var(--red)}
+.bulk-wa-btn{padding:8px 12px;background:#25D366;color:white;border:none;border-radius:10px;font-family:'Baloo 2',sans-serif;font-size:11px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:5px}
+.bulk-sms-btn{padding:8px 12px;background:var(--blue);color:white;border:none;border-radius:10px;font-family:'Baloo 2',sans-serif;font-size:11px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:5px;margin-left:5px}
+.action-row{display:flex;gap:8px}
+.action-row>*{flex:1}
+.wa-msg-box{background:#e8f8ee;border-radius:14px;padding:14px;font-size:12px;line-height:1.7;margin-bottom:12px;white-space:pre-wrap;border:2px solid #b8e8c8}
+.modal-box::-webkit-scrollbar{width:4px}
+.modal-box::-webkit-scrollbar-track{background:transparent}
+.modal-box::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+
+/* ====================================================
+   HYBRID: Tailwind CDN + Custom CSS 
+   Tailwind CDN se preflight disable hai (config mein)
+   taaki existing custom CSS kharab na ho.
+   Tailwind utilities use: hover:, active:, transition-*, scale-*, brightness-*
+   ==================================================== */
+
+/* Tailwind ke hover/active effects ke liye smooth base */
+.stat-card, .qa-btn, .btn-primary, .btn-secondary, .btn-whatsapp,
+.btn-green, .btn-danger, .export-card, .student-card {
+  will-change: transform;
+}
+
+/* Tailwind brightness utility support for gradient buttons */
+.qa-btn, .btn-primary, .btn-whatsapp {
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
