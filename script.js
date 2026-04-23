@@ -83,7 +83,7 @@ function addStudent(){
     id, rollNo, name, father,
     mother:document.getElementById('f-mother').value.trim(),
     class:cls, mobile,
-    dob:document.getElementById('f-dob').value,
+    // dob:document.getElementById('f-dob').value,
     address:document.getElementById('f-address').value.trim(),
     totalFee:fee, paidFee:paidAmt, feeStatus,
     photo: currentPhotoData || null,
